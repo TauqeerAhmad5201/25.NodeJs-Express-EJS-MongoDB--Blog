@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+.DS_Store
+Thumbs.db
+.git
+.idea
+Design Files
+DummyData.txt
+readme-image.jpg
