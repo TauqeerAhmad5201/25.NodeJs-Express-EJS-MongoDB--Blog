@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      target: production
+    ports:
+      - '5000:5000'
+    networks:
+      - mynetwork
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    networks:
+      - mynetwork
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
+
+networks:
+  mynetwork:
